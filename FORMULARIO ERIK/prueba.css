@@ -1,0 +1,329 @@
+
+body {
+  
+    font-family: Arial, sans-serif;
+    background-color: #474747;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+   
+    
+    
+}
+
+.titulo{
+    background: linear-gradient(to right, #f80f5d, #2000ad);
+    margin: 0%;
+    color: white;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 40px;
+
+
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 40%; 
+    height: 100%;
+    max-width: 30%;
+    background: white;
+    border-radius: 10px;
+    color: rgb(2, 2, 2); 
+    margin-left: 20%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: large;
+    
+}
+
+#registroForm{
+    padding: 3%;
+  
+}
+
+h1{
+    font-size: large;
+}
+label{
+    font-size: 40%;    
+}
+
+input{
+    width:27%;
+    height:6px;
+    font-size:4px ;
+    border: none;
+    border-radius: 1vmax;
+    background: linear-gradient(to right, #f80f5d, #2000ad);
+    color: white;
+  
+}
+
+input::placeholder{
+    color: white;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    
+}
+
+#nombre{
+    margin-right: 5%;
+
+
+}
+
+#tipo_documento {
+    width:50%;
+    height:11px;
+    font-size: 4px;
+    border: none;
+    border-radius: 1vmax;
+    background: linear-gradient(to right, #f80f5d, #2000ad);
+    color: rgb(255, 255, 255);
+}
+select option{
+    background-color: rgb(66, 66, 66);
+    
+}
+ 
+.genero{
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-weight: 100;
+    
+
+}
+.G_titulo{
+    font-size: 60%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+}
+
+#fecha_nacimiento {
+    font-size: 5px;
+}
+
+#boton {
+    background-color: rgb(255, 255, 255);
+    color: #ffffff;
+    padding-bottom: 12px;
+    padding-top: 1%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 7px;
+    font-weight: 900;
+    width: auto;
+    
+
+   
+    
+}
+
+
+
+@media  (max-width: 1700px){
+
+    
+       h1{
+        font-size:170%;
+
+       }
+
+       #registroForm{
+        padding: 3%;
+        font-size:250%;
+       
+    }
+    .contenedor {
+        width: 80%; 
+        height: auto;
+        max-width: 70%;
+        margin-left: 5%;
+        font-weight: 800;
+        font-size: xx-large;
+      
+        
+    }
+    .info{
+       
+       
+        align-items:center;
+        
+       
+        
+    }
+    
+    
+    input{
+        width:40%;
+        height:40px;
+        font-size:large ;
+        margin: 3%;
+        
+      
+    }
+
+    .genero{
+    
+        font-size:100%;
+        font-weight: 400;
+        
+    
+    }
+    .G_titulo{
+        font-size: 50%;
+       
+    }
+
+    
+#tipo_documento {
+    width:50%;
+    height:40px;
+    font-size: large;
+    border: none;
+    border-radius: 1vmax;
+    background: linear-gradient(to right, #f80f5d, #2000ad);
+    color: rgb(255, 255, 255);
+}
+
+.genero{
+    
+  align-items: center;
+    
+
+}
+#fecha_nacimiento {
+    font-size: x-large;
+}
+
+
+#boton {
+ 
+    font-size: large;
+    font-weight: 900;
+    width: 30%;
+    height: auto;
+}
+
+}
+
+@media  (max-width: 1221px){
+
+    
+    h1{
+        font-size:150%;
+
+       }
+
+       #registroForm{
+        
+        font-size:200%;
+       
+    }
+    .contenedor {
+       
+        max-width: 50%;
+        margin-left: 5%;
+        font-size: large;
+      
+        
+    }
+   
+    
+    
+    input{
+        width:40%;
+        height:35px;
+        font-size:small ;
+        margin: 3%;
+        
+      
+    }
+
+    .genero{
+    
+        font-size:80%;
+        font-weight: 400;
+        
+    
+    }
+    .G_titulo{
+        font-size: 50%;
+       
+    }
+
+    
+#tipo_documento {
+   
+    font-size: medium;
+   
+}
+
+.genero{
+    
+  align-items: center;
+    
+
+}
+#fecha_nacimiento {
+    font-size: large;
+}
+
+
+}
+
+@media  (max-width: 1000px){
+
+
+  #registroForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+
+
+  }
+    .info{
+    display: flex;
+    flex-direction: column;
+    padding: 3vmax;
+    width: 90%;
+    align-items: center;
+    
+
+  }
+ input{
+        width:60%;
+        height:35px;
+        font-size:small ;
+        margin: 3%;
+        text-align: center;
+    }
+
+
+    #tipo_documento{
+        margin: 3%;
+    }
+
+
+    br{
+        display: none;
+    }
+   
+}   
+
+

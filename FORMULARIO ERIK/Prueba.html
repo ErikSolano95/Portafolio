@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="prueba.css">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+
+    
+   
+
+<div class="contenedor">
+   <div class="titulo">
+    <h1>Formulario de Registro</h1> </div>
+
+    
+    <form id="registroForm"> 
+        <div class="info">
+            <label for="nombre">Nombre:</label >
+            <input type="text" id="nombre" placeholder="Digite su nombre" required >
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" placeholder="Digite su apellido" required ><br>
+        </div>
+
+        <label for="tipo_documento">Tipo de Documento:</label>
+        <select id="tipo_documento" name="tipo_documento" required>
+            <option  disabled selected="">Selecciona una opción</option>
+            <option value="dni">DNI</option>
+            <option value="carnet_identidad">Tarjeta de Identidad</option>
+            <option value="Cedula de ciudadania">Cedula de ciudadania</option>
+            <option value="pasaporte">Pasaporte</option>
+        </select><br>
+
+        <label for="numero_documento">Número de Documento:</label>
+        <input type="text" id="numero_documento" placeholder="N de documento" required ><br><br>
+
+        <div class="genero" required>
+            <label class="G_titulo">Género:</label>
+            <input type="radio" id="masculino" name="genero" value="masculino" >
+            <label for="genero_masculino">Masculino</label>
+            <input type="radio" id="femenino" name="genero" value="femenino" >
+            <label for="genero_femenino">Femenino</label>
+            <input type="radio" id="otro" name="genero" value="otro" >
+            <label for="genero_otro">Otro</label><br>
+        </div>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="Digite teléfono" required><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" placeholder="Digite correo electronico" required ><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+
+        <input type="submit" value="Registrar" id="boton">
+    </form>
+
+</div>
+
+
+
+<script>
+let registros = [];
+
+document.getElementById("registroForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    registrar();
+});
+
+function registrar() {
+    let usuario = {
+        nombre: document.getElementById("nombre").value ,
+        apellido: document.getElementById("apellido").value ,
+        tipo_documento: document.getElementById("tipo_documento").value ,
+        numero_documento: document.getElementById("numero_documento").value ,
+        genero: "",
+        telefono: document.getElementById("telefono").value ,
+        email: document.getElementById("correo").value ,
+        fecha_nacimiento: document.getElementById("fecha_nacimiento").value ,
+    }
+
+    let masculino = document.getElementById("masculino")
+    let femenino = document.getElementById("femenino") 
+    let otro = document.getElementById("otro")
+
+    if (masculino.checked) {
+        usuario.genero = "masculino"
+    }
+    else if (femenino.checked) {
+        usuario.genero = "femenino"
+    }
+    else if (otro.checked) {
+        usuario.genero = "otro"
+    }
+
+    registros.push(usuario)
+    localStorage.setItem('array_registros', JSON.stringify(registros));
+    console.log(registros);
+
+     document.getElementById("nombre").value="" 
+        document.getElementById("apellido").value="" 
+         document.getElementById("tipo_documento").value 
+         document.getElementById("numero_documento").value="" 
+         document.getElementById("telefono").value="" 
+         document.getElementById("correo").value="" 
+        document.getElementById("fecha_nacimiento").value="" 
+
+
+}
+
+let cadenaJson = localStorage.getItem('array_registros');
+registros = cadenaJson ? JSON.parse(cadenaJson) : [];
+console.log("ARRAY GUARDADO");
+console.log(registros);
+</script>
+
+</body>
+</html>

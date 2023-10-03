@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0%;
+
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+}
+
+.portada{
+    background:#f8efed;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+   
+ 
+}
+
+.info{
+    
+background: white;
+width: 80%;
+height: 93%;
+border-radius: 10%;
+background-image: url(fondoportafolio.jpg);
+background-size:101%;
+background-repeat: no-repeat;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+
+
+
+
+}
+#titulo{
+    
+    color: white;
+    margin: 5%;
+}
+
+#nombre{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    color: white;
+    margin-top: 20%;
+}
+.imagen{
+    border-radius: 60%;
+    margin: 5%;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.726);
+}
+
+
+h1{
+
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:400%;
+}
+
+.aplicaciones{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+
+.app {
+    
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: #f8efed;
+    /* border: 1px solid #ccc; */
+    border-radius: 50%;
+    padding: 20px;
+    transition: transform .2s;
+    box-shadow: 5px 5px 10px rgba(180, 180, 180, 0.9);
+    
+}
+.app:hover{
+    transform: scale(1.2);
+    background-color: #7cff96;
+    
+}
+.app a:hover{
+    color: white;
+}
+
+.app a {
+    text-decoration: none;
+    color:#5c2f14;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.home{
+    color: #148a41;
+}
+
+
+
+.linea {
+    
+    border-top: 7px solid #148a41; 
+    width: 90%; 
+    margin-bottom: 3%;
+    transition: transform .2s;
+    
+  }
+
+  .linea:hover{
+    transform: scale(1.1);
+    border-top: 5px solid #37ff00; 
+    
+    
+  }
