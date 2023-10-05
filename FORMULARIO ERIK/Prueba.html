@@ -3,10 +3,21 @@
 <head>
     <link rel="stylesheet" href="prueba.css">
     <title>Formulario de Registro</title>
+
+   
+
 </head>
 <body>
 
-    
+    <div class="alert-container" id="alert">
+       
+        <div class="alert-header">¡Alerta importante!</div>
+        <div id="alert-content"></div>
+        <div class="alert-buttons">
+            <button class="alert-button" onclick="closeAlert()">Aceptar</button>
+           
+        </div>
+    </div>
    
 
 <div class="contenedor">
@@ -17,14 +28,14 @@
     <form id="registroForm"> 
         <div class="info">
             <label for="nombre">Nombre:</label >
-            <input type="text" id="nombre" placeholder="Digite su nombre" required >
+            <input type="text" id="nombre" placeholder="Digite su nombre"  >
 
             <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" placeholder="Digite su apellido" required ><br>
+            <input type="text" id="apellido" placeholder="Digite su apellido" ><br>
         </div>
 
         <label for="tipo_documento">Tipo de Documento:</label>
-        <select id="tipo_documento" name="tipo_documento" required>
+        <select id="tipo_documento" name="tipo_documento" >
             <option  disabled selected="">Selecciona una opción</option>
             <option value="dni">DNI</option>
             <option value="carnet_identidad">Tarjeta de Identidad</option>
@@ -33,7 +44,7 @@
         </select><br>
 
         <label for="numero_documento">Número de Documento:</label>
-        <input type="text" id="numero_documento" placeholder="N de documento" required ><br><br>
+        <input type="text" id="numero_documento" placeholder="N de documento" ><br><br>
 
         <div class="genero" required>
             <label class="G_titulo">Género:</label>
@@ -46,13 +57,13 @@
         </div>
 
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" placeholder="Digite teléfono" required><br>
+        <input type="tel" id="telefono" placeholder="Digite teléfono" ><br>
 
         <label for="correo">Correo:</label>
-        <input type="email" id="correo" placeholder="Digite correo electronico" required ><br>
+        <input type="email" id="correo" placeholder="Digite correo electronico"  ><br>
 
         <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" ><br>
 
         <input type="submit" value="Registrar" id="boton">
     </form>
@@ -66,7 +77,7 @@ let registros = [];
 
 document.getElementById("registroForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    registrar();
+    validar();
 });
 
 function registrar() {
@@ -109,6 +120,54 @@ function registrar() {
 
 
 }
+
+ // Función para mostrar la alerta
+ function showAlert() {
+        document.getElementById('alert').style.display = 'block';
+    }
+
+    // Función para cerrar la alerta
+    function closeAlert() {
+        document.getElementById('alert').style.display = 'none';
+    }
+
+function validar() {
+
+
+    let verificadorc = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (document.getElementById("nombre").value == "") {
+        document.getElementById("alert-content").textContent = "Por favor el nombre esta vacio"
+        showAlert()
+    } else if (document.getElementById("apellido").value == "") {
+        document.getElementById("alert-content").textContent = "Por favor el apellido esta vacio"
+        showAlert()
+    } else if (document.getElementById("tipo_documento").value == "Selecciona una opción") {
+        document.getElementById("alert-content").textContent = "Por favor el tipo de documento esta vacio"
+        showAlert()
+    } else if (document.getElementById("numero_documento").value == "") {
+        document.getElementById("alert-content").textContent = "Por favor el  de documento esta vacio"
+        showAlert()}
+        else if (!document.querySelector('input[name="genero"]:checked')) {
+        document.getElementById("alert-content").textContent = "Seleccione un género"
+        showAlert()}
+
+    else if (document.getElementById("telefono").value.length < 10) {
+        document.getElementById("alert-content").textContent = "Ingrese un teléfono válido"
+        showAlert()}
+
+    else if (!verificadorc.test(document.getElementById("correo").value)) {
+        document.getElementById("alert-content").textContent = "Ingrese un correo"
+        showAlert()}
+
+    else if ((new Date().getFullYear() - new Date(document.getElementById("fecha_nacimiento").value).getFullYear()) < 18) {
+        document.getElementById("alert-content").textContent = "Debe ser mayor de edad para continuar con el registro"
+        showAlert()}
+
+    else {
+        registrar()
+    }
+}
+  
 
 let cadenaJson = localStorage.getItem('array_registros');
 registros = cadenaJson ? JSON.parse(cadenaJson) : [];
