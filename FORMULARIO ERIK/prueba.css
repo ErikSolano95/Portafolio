@@ -11,6 +11,7 @@ body {
 }
 
 
+
 .alert-container {
     display: none;
     position: fixed;
@@ -178,6 +179,24 @@ select option {
 
 }
 
+
+table{
+    border: 1px solid white;
+   width: 100%;
+    
+   
+    
+}
+th{
+    background-color: black;
+    color:rgb(255, 3, 100);
+   
+
+}
+td{
+    color:white;
+    background-color: gray;
+}
 
 
 @media (max-width: 1700px) {

@@ -1,179 +1,280 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="prueba.css">
-    <title>Formulario de Registro</title>
-
-   
-
+  <link rel="stylesheet" href="prueba.css" />
+  <title>Formulario de Registro</title>
 </head>
+
 <body>
-
-    <div class="alert-container" id="alert">
-       
-        <div class="alert-header">¡Alerta importante!</div>
-        <div id="alert-content"></div>
-        <div class="alert-buttons">
-            <button class="alert-button" onclick="closeAlert()">Aceptar</button>
-           
-        </div>
+  <div class="alert-container" id="alert">
+    <div class="alert-header">¡Alerta importante!</div>
+    <div id="alert-content"></div>
+    <div class="alert-buttons">
+      <button class="alert-button" onclick="closeAlert()">Aceptar</button>
     </div>
-   
+  </div>
 
-<div class="contenedor">
-   <div class="titulo">
-    <h1>Formulario de Registro</h1> </div>
+  <div class="contenedor">
+    <div class="titulo">
+      <h1>Formulario de Registro</h1>
+    </div>
 
-    
-    <form id="registroForm"> 
-        <div class="info">
-            <label for="nombre">Nombre:</label >
-            <input type="text" id="nombre" placeholder="Digite su nombre"  >
+    <form id="registroForm">
+      <div class="info">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Digite su nombre" />
 
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" placeholder="Digite su apellido" ><br>
-        </div>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" placeholder="Digite su apellido" /><br />
+      </div>
 
-        <label for="tipo_documento">Tipo de Documento:</label>
-        <select id="tipo_documento" name="tipo_documento" >
-            <option  disabled selected="">Selecciona una opción</option>
-            <option value="dni">DNI</option>
-            <option value="carnet_identidad">Tarjeta de Identidad</option>
-            <option value="Cedula de ciudadania">Cedula de ciudadania</option>
-            <option value="pasaporte">Pasaporte</option>
-        </select><br>
+      <label for="tipo_documento">Tipo de Documento:</label>
+      <select id="tipo_documento" name="tipo_documento">
+        <option disabled selected="">Selecciona una opción</option>
+        <option value="dni">DNI</option>
+        <option value="carnet_identidad">Tarjeta de Identidad</option>
+        <option value="Cedula de ciudadania">Cedula de ciudadania</option>
+        <option value="pasaporte">Pasaporte</option>
+      </select><br />
 
-        <label for="numero_documento">Número de Documento:</label>
-        <input type="text" id="numero_documento" placeholder="N de documento" ><br><br>
+      <label for="numero_documento">Número de Documento:</label>
+      <input type="text" id="numero_documento" placeholder="N de documento" /><br /><br />
 
-        <div class="genero" required>
-            <label class="G_titulo">Género:</label>
-            <input type="radio" id="masculino" name="genero" value="masculino" >
-            <label for="genero_masculino">Masculino</label>
-            <input type="radio" id="femenino" name="genero" value="femenino" >
-            <label for="genero_femenino">Femenino</label>
-            <input type="radio" id="otro" name="genero" value="otro" >
-            <label for="genero_otro">Otro</label><br>
-        </div>
+      <div class="genero" required>
+        <label class="G_titulo">Género:</label>
+        <input type="radio" id="masculino" name="genero" value="masculino" />
+        <label for="genero_masculino">Masculino</label>
+        <input type="radio" id="femenino" name="genero" value="femenino" />
+        <label for="genero_femenino">Femenino</label>
+        <input type="radio" id="otro" name="genero" value="otro" />
+        <label for="genero_otro">Otro</label><br />
+      </div>
 
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" placeholder="Digite teléfono" ><br>
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" placeholder="Digite teléfono" /><br />
 
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" placeholder="Digite correo electronico"  ><br>
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" placeholder="Digite correo electronico" /><br />
 
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" ><br>
+      <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" /><br />
 
-        <input type="submit" value="Registrar" id="boton">
+      <input type="button" value="Registrar" id="boton" onclick="validar()">
     </form>
+  </div>
 
-</div>
+  <h2>Registros</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Tipo Documento</th>
+        <th>N° Documento</th>
+        <th>Género</th>
+        <th>telefono</th>
+        <th>Correo</th>
+        <th>Fecha de nacimiento</th>
+        <th>Objeto</th>
+      </tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+  </table>
+
+  <script>
+    let registros = [];
+    let op = null;
+    let indice = null;
+
+    // document.getElementById("registroForm").addEventListener("submit", function(event) {
+    //     event.preventDefault();
+    //     validar();
+    // });
+
+    function registrar() {
 
 
+      let usuario = {
+        nombre: document.getElementById("nombre").value,
+        apellido: document.getElementById("apellido").value,
+        tipo_documento: document.getElementById("tipo_documento").value,
+        numero_documento: document.getElementById("numero_documento").value,
+        genero: document.querySelector('input[name="genero"]:checked').value,
+        telefono: document.getElementById("telefono").value,
+        email: document.getElementById("correo").value,
+        fecha_nacimiento: document.getElementById("fecha_nacimiento").value,
+      };
 
-<script>
-let registros = [];
 
-document.getElementById("registroForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    validar();
-});
+      if (op === true) {
+        registros[indice] = usuario;
+      } else {
+        registros.push(usuario)
+      }
 
-function registrar() {
-    let usuario = {
-        nombre: document.getElementById("nombre").value ,
-        apellido: document.getElementById("apellido").value ,
-        tipo_documento: document.getElementById("tipo_documento").value ,
-        numero_documento: document.getElementById("numero_documento").value ,
-        genero: "",
-        telefono: document.getElementById("telefono").value ,
-        email: document.getElementById("correo").value ,
-        fecha_nacimiento: document.getElementById("fecha_nacimiento").value ,
+      document.getElementById("nombre").value = "";
+      document.getElementById("apellido").value = "";
+      document.getElementById("tipo_documento").value;
+      document.getElementById("numero_documento").value = "";
+      document.querySelector('input[name="genero"]:checked').checked = false;
+      document.getElementById("telefono").value = "";
+      document.getElementById("correo").value = "";
+      document.getElementById("fecha_nacimiento").value = "";
     }
 
-    let masculino = document.getElementById("masculino")
-    let femenino = document.getElementById("femenino") 
-    let otro = document.getElementById("otro")
+    // localStorage.setItem("array_registros", JSON.stringify(registros));
+    // console.log(registros);
 
-    if (masculino.checked) {
-        usuario.genero = "masculino"
-    }
-    else if (femenino.checked) {
-        usuario.genero = "femenino"
-    }
-    else if (otro.checked) {
-        usuario.genero = "otro"
-    }
-
-    registros.push(usuario)
-    localStorage.setItem('array_registros', JSON.stringify(registros));
-    console.log(registros);
-
-     document.getElementById("nombre").value="" 
-        document.getElementById("apellido").value="" 
-         document.getElementById("tipo_documento").value 
-         document.getElementById("numero_documento").value="" 
-         document.getElementById("telefono").value="" 
-         document.getElementById("correo").value="" 
-        document.getElementById("fecha_nacimiento").value="" 
-
-
-}
-
- // Función para mostrar la alerta
- function showAlert() {
-        document.getElementById('alert').style.display = 'block';
+    // Función para mostrar la alerta
+    function showAlert() {
+      document.getElementById("alert").style.display = "block";
     }
 
     // Función para cerrar la alerta
     function closeAlert() {
-        document.getElementById('alert').style.display = 'none';
+      document.getElementById("alert").style.display = "none";
     }
 
-function validar() {
+    function validar() {
+      let verificadorc = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (document.getElementById("nombre").value == "") {
+        document.getElementById("alert-content").textContent =
+          "Por favor el nombre esta vacio";
+        showAlert();
+      } else if (document.getElementById("apellido").value == "") {
+        document.getElementById("alert-content").textContent =
+          "Por favor el apellido esta vacio";
+        showAlert();
+      } else if (
+        document.getElementById("tipo_documento").value ==
+        "Selecciona una opción"
+      ) {
+        document.getElementById("alert-content").textContent =
+          "Por favor el tipo de documento esta vacio";
+        showAlert();
+      } else if (document.getElementById("numero_documento").value == "") {
+        document.getElementById("alert-content").textContent =
+          "Por favor el  de documento esta vacio";
+        showAlert();
+      } else if (!document.querySelector('input[name="genero"]:checked')) {
+        document.getElementById("alert-content").textContent =
+          "Seleccione un género";
+        showAlert();
+      } else if (document.getElementById("telefono").value.length < 10) {
+        document.getElementById("alert-content").textContent =
+          "Ingrese un teléfono válido";
+        showAlert();
+      } else if (
+        !verificadorc.test(document.getElementById("correo").value)
+      ) {
+        document.getElementById("alert-content").textContent =
+          "Ingrese un correo";
+        showAlert();
+      } else if (
+        new Date().getFullYear() -
+        new Date(
+          document.getElementById("fecha_nacimiento").value
+        ).getFullYear() <
+        18
+      ) {
+        document.getElementById("alert-content").textContent =
+          "Debe ser mayor de edad para continuar con el registro";
+        showAlert();
 
+      } else {
 
-    let verificadorc = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (document.getElementById("nombre").value == "") {
-        document.getElementById("alert-content").textContent = "Por favor el nombre esta vacio"
-        showAlert()
-    } else if (document.getElementById("apellido").value == "") {
-        document.getElementById("alert-content").textContent = "Por favor el apellido esta vacio"
-        showAlert()
-    } else if (document.getElementById("tipo_documento").value == "Selecciona una opción") {
-        document.getElementById("alert-content").textContent = "Por favor el tipo de documento esta vacio"
-        showAlert()
-    } else if (document.getElementById("numero_documento").value == "") {
-        document.getElementById("alert-content").textContent = "Por favor el  de documento esta vacio"
-        showAlert()}
-        else if (!document.querySelector('input[name="genero"]:checked')) {
-        document.getElementById("alert-content").textContent = "Seleccione un género"
-        showAlert()}
+        registrar();
+        document.getElementById("tabla").innerHTML = "";
+        pintar()
 
-    else if (document.getElementById("telefono").value.length < 10) {
-        document.getElementById("alert-content").textContent = "Ingrese un teléfono válido"
-        showAlert()}
+        op = false
+      }
+    }
 
-    else if (!verificadorc.test(document.getElementById("correo").value)) {
-        document.getElementById("alert-content").textContent = "Ingrese un correo"
-        showAlert()}
+    function pintar() {
+      let frag = document.createDocumentFragment();
 
-    else if ((new Date().getFullYear() - new Date(document.getElementById("fecha_nacimiento").value).getFullYear()) < 18) {
-        document.getElementById("alert-content").textContent = "Debe ser mayor de edad para continuar con el registro"
-        showAlert()}
+      registros.forEach((item, index) => {
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+        let td5 = document.createElement("td");
+        let td6 = document.createElement("td");
+        let td7 = document.createElement("td");
+        let td8 = document.createElement("td");
+        let td9 = document.createElement("td");
+        let editar = document.createElement("button");
+        let eliminar = document.createElement("button");
 
-    else {
-        registrar()
-    }
-}
-  
+        editar.textContent = "📝";
+        editar.addEventListener("click", () => {
+          edita(item, index);
+        });
 
-let cadenaJson = localStorage.getItem('array_registros');
-registros = cadenaJson ? JSON.parse(cadenaJson) : [];
-console.log("ARRAY GUARDADO");
-console.log(registros);
-</script>
+        eliminar.textContent = "❌";
+        eliminar.addEventListener("click", () => {
+          borrar(index)
+        });
 
+        td1.textContent = item.nombre;
+        td2.textContent = item.apellido;
+        td4.textContent = item.tipo_documento;
+        td3.textContent = item.numero_documento;
+        td5.textContent = item.genero;
+        td6.textContent = item.telefono;
+        td7.textContent = item.email;
+        td8.textContent = item.fecha_nacimiento;
+
+        td9.appendChild(editar);
+        td9.appendChild(eliminar);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        tr.appendChild(td6);
+        tr.appendChild(td7);
+        tr.appendChild(td8);
+        tr.appendChild(td9);
+        frag.appendChild(tr);
+        document.getElementById("tabla").appendChild(frag);
+      });
+    }
+
+    function edita(r, i) {
+      op = true;
+      indice = i;
+      console.log(r);
+      document.getElementById("nombre").value = r.nombre;
+      document.getElementById("apellido").value = r.apellido;
+      document.getElementById("tipo_documento").value = r.tipo_documento;
+      document.getElementById("numero_documento").value = r.numero_documento;
+      if (r.genero === "femenino") {
+        document.querySelector('input[name="genero"][value="femenino"]').checked = true;
+      } else if (r.genero === "masculino") {
+        document.querySelector('input[name="genero"][value="masculino"]').checked = true;
+      } else if (r.genero === "otro") {
+        document.querySelector('input[name="genero"][value="otro"]').checked = true;
+      }   
+        document.getElementById("telefono").value = r.telefono;
+        document.getElementById("correo").value = r.email;
+        document.getElementById("fecha_nacimiento").value = r.fecha_nacimiento;
+      }
+
+      function borrar(index) {
+        registros.splice(index, 1);
+        document.getElementById("tabla").innerHTML = "";
+        pintar();
+      }
+
+      // let cadenaJson = localStorage.getItem("array_registros");
+      // registros = cadenaJson ? JSON.parse(cadenaJson) : [];
+      // console.log("ARRAY GUARDADO");
+      // console.log(registros);
+  </script>
 </body>
+
 </html>
