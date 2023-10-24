@@ -1,0 +1,106 @@
+body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    gap: 2vmax;
+    margin: 0px;
+    background-color: black;
+    background-image: url(fondo.jpg);
+    
+    
+}
+
+.cabeza{
+
+   
+   align-items: center;
+   background-color:#1693a5;
+   width: 50%;
+   height: auto;
+   text-align: center;
+   color: white;
+   margin-top:  4%;
+   
+  
+
+}
+
+.cuerpo{
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: 8px solid #1693a5 ;
+    color: #1693a5;
+    background-color:white;
+    gap: 3VMAX;
+    padding: 2%;
+    width: 60%;
+    height: auto;
+    font-weight: bold;
+    font-size: larger;
+
+}
+
+.detalle_gasto{
+display: flex;
+flex-direction: column;
+gap: 1VMAX;
+
+}
+.tabla{
+    text-align: center;
+}
+.tabla th{
+    color:  white;
+    background-color:rgb(67, 65, 65) ;
+    width:10% ;
+    padding: 2%;
+    font-size: small;
+
+    
+}
+
+.tabla button {
+    background-color: rgb(201, 20, 20);
+    color: white;
+    width: 50%;
+    height: 2vmax;
+    margin-left: 28%;
+}
+
+.titulo2{
+    text-align: center;
+}
+
+.caja1{
+    background-color: rgb(103, 103, 151);
+    padding: 5%;
+    color: black;
+    border-radius: 0.5vmax;
+}
+
+.caja2{
+    background-color: rgb(219, 59, 59);
+    padding: 5%;
+    color: black;
+    border-radius: 0.5vmax;
+}
+
+input{
+    border-radius: 0.3vmax;
+    height: 10%;
+}
+
+.boton1{
+    width: 25%;
+    height: 15%;
+    border-radius: 0.5vmax;
+    background-color:#1693a5 ;
+    border: none;
+    color: white;
+    font-weight:bold;
+
+}

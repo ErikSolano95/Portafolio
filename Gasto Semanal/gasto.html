@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="stilos.css">
+    <title>Presupuesto Semanal</title>
+
+</head>
+
+<body>
+
+   
+
+    <div class="cabeza">
+        <div class="titulo">
+            <h1>Control de Presupuesto Semanal</h1>
+        </div>
+
+       
+    </div>
+
+    <div class="cuerpo">
+
+        <div class="detalle_gasto">
+
+            
+            <h2>Añade tus gastos aqui</h2>
+            <label>Gasto:</label>
+            <input type="text" id="nombreGasto" placeholder="Nombre del Gasto">      
+            <label>Cantidad:</label>
+            <input type="number" id="valorGasto" placeholder="Valor del Gasto">
+            <button class="boton1" onclick="agregarGasto()">Agregar</button>
+
+            
+        </div>
+
+        <div class="presupuesto">
+            <div class="listado">
+                <h2 class="titulo2">Listado</h2>
+                <table class="tabla">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+
+
+            <h3 class="caja1">Presupuesto: $<span id="presupuesto">0.00</span></h3>
+            <h3 class="caja2">Saldo: $<span id="saldo">0.00</span></h3>
+
+        </div>
+
+
+
+    </div>
+
+  
+
+
+</body>
+
+</html>
