@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stilos.css">
+    <script src="gastos.js"></script>
+</head>
+
+<body>
+
+    <h1 class="title">Gasto Semanal</h1>
+
+    <div class="contenedor">
+
+
+        <div class="izquierdo">
+            <div class="izquierdoc">
+            <h1>Añade tus gastos aqui</h1>
+
+            <div id="alerta1">ACEPTADA</div>
+
+            <div id="alerta2"> PRESUPUESTO INSUFICIENTE</div>
+        </div>
+
+            <h3>Gasto:</h3>
+            <input type="text" id="gasto" class="input" placeholder="Nombre del gasto">
+
+            <h3>Cantidad:</h3>
+            <input type="text" id="cantidad" class="input" placeholder="Valor del gasto en $">
+
+
+            <input type="button" value="Agregar" id="boton" onclick="validar()">
+
+        </div>
+
+
+
+        <div class="derecho">
+
+            <h1>Lista Items</h1>
+
+            <table id="tabla">
+
+                <tbody id="tabla">
+
+                </tbody>
+            </table>
+
+
+            <div id="conp">Presupuesto: <div id="presupuesto"></div> <h5 id="texpres"></h5> </div>
+            <div id="conr">Restante: <div id="restante"></div> <h5 id="texsaldo"></h5> </div>
+        
+        </div>
+
+
+        </div>
+
+
+    </div>
+
+
+<!-- alerta -->
+<div class="alert-container" id="alert">
+       
+    <div class="alert-header">¡Alerta importante!</div>
+    <div id="alert-content"></div>
+    <div class="alert-buttons">
+        <button class="alert-button" onclick="closeAlert()">Aceptar</button>
+    </div>
+</div>
+
+<div class="alert-container" id="alertpres">
+       
+    <div class="alert-header">Presupuesto</div>
+   
+    <input  type="text" id="presopuesto" class="input"  placeholder="Ingrese el presupuesto en $" style="margin-top: 5%; width: 60%; text-align: center;">
+    <div id="alert-content" >
+        <h5 id="press"></h5>
+    </div>
+    <div class="alert-buttons">
+        <button class="alert-button" onclick="closeAlertpres()">Guardar</button>
+    </div>
+</div>
+
+    
+</body>
+
+</html>

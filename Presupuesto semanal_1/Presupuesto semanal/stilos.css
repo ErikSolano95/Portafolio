@@ -1,0 +1,320 @@
+body {
+  background-image: url(fondoA.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.contenedor {
+  border: 8px solid black;
+  background: rgb(235, 233, 233);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3%;
+  width: 80%;
+  justify-content: space-between;
+  padding: 3%;
+  border-radius: 0.25vmax;
+  font-size: x-large;
+  color:black;
+}
+
+
+
+.columna1{
+  background-color:#edae06;
+  color: black;
+  padding: 0.5vmax;
+}
+
+.derecho {
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  align-items: center;
+}
+
+.izquierdo {
+  display: flex;
+  flex-direction: column;
+}
+
+.izquierdoc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7%;
+  height: 50%;
+}
+
+#conp {
+  width: 100%;
+  height: 15%;
+  background: rgb(39, 100, 213);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3%;
+  border-radius: 0.25vmax;
+  color: black;
+  font-weight: bold;
+}
+
+#conr {
+  width: 100%;
+  height: 15%;
+  background: #edae06;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3%;
+  border-radius: 0.25vmax;
+  color: black;
+  font-weight: bold;
+}
+
+.input {
+  height: 3vmax;
+  border-radius: 0.25vmax;
+}
+
+#boton {
+  margin-top: 3%;
+  width: 10%;
+  height: 7%;
+  border-radius: 0.25vmax;
+}
+
+#alerta1 {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3vmax;
+  background: rgb(0, 255, 34);
+  border-radius: 0.25vmax;
+  color: white;
+}
+
+#alerta2 {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3vmax;
+  background: rgb(243, 91, 129);
+  border-radius: 0.25vmax;
+  color: white;
+  
+}
+
+H1 {
+  color:black;
+}
+
+.title {
+  color:yellow;
+  font-size: 400%;
+  background: black;
+ width: 60%;
+ text-align: center;
+}
+
+
+#boton {
+
+  background-color:yellow;
+  color: black;
+  font-weight: 800;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 3%;
+  transition: transform .2s;
+  width: 25%;
+  height: 15%;
+}
+
+#boton:hover {
+  background-color: black;
+  color: yellow;
+}
+
+
+
+.alert-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  padding: 20px;
+  border: 5px solid yellow;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.884);
+  width: 400px;
+  color:yellow ;
+
+}
+
+#alertpres {
+  display: block;
+}
+
+.alert-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#alert-content {
+  font-size: large;
+  color: yellow;
+
+}
+
+.alert-buttons {
+  text-align: right;
+}
+
+.alert-button {
+  padding: 10px 20px;
+  background-color:yellow;
+  color:black;
+  font-weight: 800;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-top: 3%;
+  transition: transform .2s;
+}
+
+.alert-button:hover {
+  background-color: white;
+  color: black;
+}
+
+#press {
+  color: yellow;
+  font-size: medium;
+}
+
+
+#tabla {
+  width: 100%;
+  text-align: center;
+  border-collapse: separate; 
+  border-spacing: 10px; 
+}
+
+.boton_borrar {
+  background-color: rgb(243, 3, 3);
+  color: white;
+  transition: transform .2s;
+  width: 70%;
+  border-radius: 0.3vmax;
+  border: none;
+  padding: 5%;
+
+  
+}
+
+.boton_borrar:hover {
+  background-color: rgb(96, 0, 0);
+}
+
+.valor_gasto{
+  background-color:black;
+  width: 40%;
+  border-radius: 3vmax;
+  color: yellow;
+ 
+ 
+}
+
+@media screen and (max-width: 788px) {
+
+  .boton_borrar {
+    
+    width: 100%;
+    height: 3vmax;
+    
+  
+    
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+
+  h1{
+    font-size: xx-large;
+    text-align: center;
+  }
+  
+#boton {
+  width: 50%;
+  height: 10%;
+}
+}
+
+@media screen and (max-width: 600px) {
+
+  .contenedor {
+display: flex;
+flex-direction: column;
+
+  }
+
+  #boton {
+    width: 35%;
+    height: 10%;
+  }
+
+  #conp {
+    margin-bottom: 3%;
+  }
+  .title {
+    
+    font-size: 200%;
+    
+   width: 70%;
+   padding: 4%;
+   
+  }
+  .boton_borrar {
+    
+    width: 100%;
+    height: 5vmax;
+     
+  }
+}
+
+@media screen and (max-width: 551px) {
+
+
+  .alert-container {
+  
+    width: 300px;
+   
+  
+  }
+
+}
+
+@media screen and (max-width: 432px) {
+
+ 
+
+
+  .alert-container {
+  
+    width: 250px;
+   
+  
+  }
+
+}
