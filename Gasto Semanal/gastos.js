@@ -76,7 +76,7 @@ function validar() {
                 document.getElementById("alerta1").style.display = "none"
             }, 3000);
         }
-        else{ document.getElementById("alert-content").textContent = "Su Saldo es insuficiente"
+        else{ document.getElementById("alert-content").textContent = "Sin saldo"
         showAlert()
 
         }
