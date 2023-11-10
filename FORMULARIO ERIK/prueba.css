@@ -5,6 +5,9 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 
 
 
@@ -72,7 +75,7 @@ body {
 .contenedor {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 60%;
     height: auto;
     background: white;
     border-radius: 10px;
@@ -81,6 +84,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 800;
     font-size: large;
+    margin-right: 20%;
 
 }
 
@@ -189,7 +193,7 @@ table{
 }
 th{
     background-color: black;
-    color:rgb(255, 3, 100);
+    color:rgb(255, 3, 100); 
    
 
 }
@@ -354,10 +358,29 @@ td{
         font-size: large;
     }
 
+    table{
+       
+       width: 70%;
+       font-size: small;
+
+
+    }
+
 
 }
 
 @media (max-width: 1000px) {
+
+    .contenedor {
+        
+        width: 50%;
+        height: auto;
+       
+
+        font-size: large;
+        margin-right: 20%;
+    
+    }
 
 
     #registroForm {
