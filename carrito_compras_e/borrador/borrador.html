@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="stilos.css" />
+    <script src="borrador.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="encabezado">
+      <div class="marca">
+        <h1 class="title1">Esm</h1>
+        <h3 class="title2">Sport</h3>
+      </div>
+
+      <div class="carrito" id="carritoContainer">
+        <img
+          class="img_carrito"
+          src="carrito.png"
+          width="6%"
+          alt="auto"
+          id="carritoImagen"
+        />
+        <div class="crr">
+        <table id="tabla">
+            <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+          <tbody id="tablaBody"></tbody>
+        </table>
+        <div class="total-carrito" id="totalCarrito">Total: $0.00</div>
+        <button id="botonVaciar" class="boton-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+        
+      </div>
+      </div>
+    </div>
+
+    <div class="publicidad">
+      <div class="tex">
+        <h3>Han llegado nuevos productos</h3>
+        <h3>Envíos gratuitos</h3>
+        <h3>Descuentos hasta del 20%</h3>
+      </div>
+      <div class="fondo">
+        <div class="promo">
+          <h2>Disfruta los mejores productos</h2>
+          <h4>Conoce nuestras ofertas</h4>
+          <input
+            type="text"
+            class="barra"
+            placeholder="¿Qué producto deseas?"
+          />
+        </div>
+      </div>
+      
+      <div id="container"></div>
+    </div>
+
+    <footer class="pie">
+        <div class="linea1">
+          <h4>Para tu Negocio</h4>
+          <h4>Conviértete en Proveedor</h4>
+          <h4>Aplicaciones Móviles</h4>
+          <h4>Soporte</h4>
+        </div>
+        <div class="linea2">
+          <h4>¿Quiénes Somos?</h4>
+          <h4>Empleo</h4>
+          <h4>Blog</h4>
+        </div>
+      </footer>
+
+  </body>
+
+</html>
