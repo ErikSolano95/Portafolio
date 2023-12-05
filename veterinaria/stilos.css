@@ -1,0 +1,208 @@
+body{
+    margin: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100vmax ;
+    height: auto;
+    background:black;
+    color:rgb(255, 217, 0);
+    ;
+
+    
+}
+
+.img-principal{
+    width: 100%;
+    height: 30vmax;
+    
+    
+}
+
+
+
+.encabezado{
+    display: grid;
+    grid-template-columns: repeat(2, 30vmax );
+    width: 90vmax;
+    background-color: white;
+    color:black;
+    
+    
+   
+    
+}
+
+.cont-izquierdo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+label {
+ margin: 1vmax;
+  }
+
+  .botones{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    
+  }
+
+  .gif-button {
+    width: 15vmax;
+    height: 15vmax;
+    border: none;
+    border-radius: 50%;
+    background: url(http://olegif.com/bin/gifs/00/38/48.gif); 
+    background-size:cover;
+    cursor: pointer;
+    color: yellow; 
+    font-size:5vmax; 
+    transition: transform .2s;
+  }
+  .gif-button:hover{
+    transform: scale(1.2);
+}
+.title2{
+    color:rgb(255, 115, 0);
+}
+
+.cont-derecho{
+
+display: flex;
+    margin-top: 2vmax;
+    width: 52vmax;
+    height: 20vmax;
+    background-image: url(https://img.freepik.com/foto-gratis/lindo-concepto-naturaleza-muerta-accesorios-mascotas_23-2148949612.jpg?w=1380&t=st=1701486415~exp=1701487015~hmac=dd8feb3e63b596f5bc93e7404a78787f627ae917df689b382cb5a6701360344a);
+    background-size:cover;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.formulario {
+    display: none;
+    position: absolute;
+    left: 35vmax;
+    top: 34.1vmax;
+    border: 3px solid #f1f1f1;
+    background-color: black;
+    max-width: 50vmax;
+    height: 23vmax;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size:large;
+    
+}
+
+
+
+button {
+    background-color:rgb(255, 217, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+button:hover{
+    transform: scale(1.2);
+}
+
+.top{
+    display: flex;
+    gap: 2vmax;
+    
+}
+.form-izquierdo{
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+}
+.for-derecho{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2vmax;
+}
+
+.form-pie{
+
+    width: 40vmax;
+    height: 5vmax;
+    margin-top: 2vmax;
+
+}
+
+.boton-form{
+  
+    margin: 3vmax 0vmax 3vmax 0vmax;
+
+}
+
+
+
+.alert-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgb(189, 189, 189);
+    padding: 20px;
+    border: 2px solid rgb(255, 217, 0);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    color: black;
+
+}
+
+.alert-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alert-content {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.alert-buttons {
+    text-align: right;
+}
+
+.alert-button {
+    padding: 10px 20px;
+    background-color:rgb(255, 217, 0);
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 3%;
+    color: black;
+
+}
+
+.boton-editar{
+    color: black;
+    font-weight: bold;
+}

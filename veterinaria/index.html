@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="stilos.css" />
+    <script src="veterinaria.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <img src="fondo mascotas1.jpg" class="img-principal" />
+
+      <h1 class="title">Veterinaria</h1>
+
+      <div class="encabezado">
+        <div class="cont-izquierdo">
+          <h2 class="title2">Estado</h2>
+          <div class="botones">
+            <label>
+              <input type="radio" name="Abiertas" value="Abiertas" />Abiertas
+            </label>
+            <label>
+              <input type="radio" name="Anulada" value="Anulada" />Anulada
+            </label>
+            <label>
+              <input type="radio" name="Terminada" value="Terminada" />Terminada
+            </label>
+          </div>
+        </div>
+
+        <div class="cont-derecho">
+          <button onclick="openForm()" class="gif-button">+</button>
+        </div>
+
+        <div class="formulario" id="myForm">
+          <form id="cita-form" class="formu">
+            <h2 style="color: rgb(255, 217, 0);">Agendar Cita</h2>
+            <div class="top">
+              
+              <div class="form-izquierdo">
+                <div class="nombre">
+                  <label for="nombre" >Nombre de la mascota:</label>
+                  <input type="text" id="nombre"  />
+                </div>
+                <div class="tipo">
+                  <label for="tipoMascota">Tipo de mascota:</label>
+                  <select id="tipo" >
+                    <option disabled selected ="">selecione una mascota</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                    <option value="ave">Ave</option>
+                    <option value="conejo">Conejo</option>
+                    <option value="reptil">Reptil</option>
+                    <option value="roedor">Roedor</option>
+                  </select>
+                </div>
+              </div>
+              <div class="for-derecho">
+                <div class="propietario">
+                  <label for="propietario" 
+                  >Propietario:</label>
+                  <input type="text" id="propietario"/>
+                </div>
+
+                <div class="fecha">
+                  <label for="fecha">Fecha:</label>
+                  <input type="date" id="fecha"  />
+                </div>
+
+                <div class="telefono">
+                  <label for="telefono" >Teléfono:</label>
+                  <input
+                    type="tel"
+                    id="telefono"
+                    pattern="[0-9]{10}"
+                    
+                  />
+                </div>
+
+                <div class="hora">
+                  <label for="hora">Hora:</label>
+                  <input type="time" id="hora"  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-pie">
+              <label for="sintomas">Síntomas:</label>
+              <textarea id="sintomas" style="width: 40vmax ; height: 5vmax;;"></textarea>
+            </div>
+<div class="boton-form">
+    <button type="button" id="boton2" value="GUARDAR" onclick="validar()">Guardar Cita</button>
+    <button type="button" onclick="closeForm()">Cerrar Formulario</button>
+</div>
+           
+          </form>
+        </div>
+
+        <!-- <div id="contenedor_citas">
+            <h2>Lista de Citas</h2>
+
+            
+        </div> -->
+
+        <div class="contenedor">
+        
+          <div id="contenedor_citas">
+
+            <h2>Lista de Citas</h2>
+          </div>
+
+
+</div>
+
+        <!-- alerta -->
+        <div class="alert-container" id="alert">
+       
+            <div class="alert-header">¡Alerta importante!</div>
+            <div id="alert-content"></div>
+            <div class="alert-buttons">
+                <button class="alert-button" onclick="closeAlert()">Aceptar</button>
+            </div>
+
+
+       
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
