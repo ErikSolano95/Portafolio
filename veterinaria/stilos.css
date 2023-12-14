@@ -7,7 +7,8 @@ body{
 .contenedor{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:flex;
+    
     width:100vmax ;
     height: auto;
     background:black;
@@ -24,17 +25,37 @@ body{
     
 }
 
+.title{
+    position: relative;
+    left: 25vmax;
+    bottom: 5vmax;
+    background-color: rgba(49, 49, 49, 0.527);
+    width: 20vmax;
+    height: 3vmax;
+    padding-top: 0.5vmax;
+    text-align: center;
+   
+    font-size: xxx-large;
+
+
+}
+
 
 
 .encabezado{
     display: grid;
-    grid-template-columns: repeat(2, 30vmax );
-    width: 90vmax;
-    background-color: white;
-    color:black;
-    
-    
+    grid-template-columns:20vmax 80vmax;
+    width: 80vmax;
+    height: 20vmax;
    
+    color:black;
+    margin-left: 20vmax;
+    justify-content: center;
+    
+
+    
+
+       
     
 }
 
@@ -43,6 +64,12 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 10vmax;
+    height: 16vmax;
+    background-color:rgb(235, 231, 231);
+    border-radius: 0.5vmax;
+    box-shadow: 5px 5px 6px rgb(211, 95, 0);
+    
     
 }
 
@@ -80,29 +107,30 @@ label {
 .cont-derecho{
 
 display: flex;
-    margin-top: 2vmax;
     width: 52vmax;
     height: 20vmax;
-    background-image: url(https://img.freepik.com/foto-gratis/lindo-concepto-naturaleza-muerta-accesorios-mascotas_23-2148949612.jpg?w=1380&t=st=1701486415~exp=1701487015~hmac=dd8feb3e63b596f5bc93e7404a78787f627ae917df689b382cb5a6701360344a);
+    background-image: url(fondo.jpg);
     background-size:cover;
     justify-content: center;
     align-items: center;
+    border-radius: 2vmax;
     
 }
 
 .formulario {
     display: none;
     position: absolute;
-    left: 35vmax;
-    top: 34.1vmax;
+    left: 30vmax;
+    top: 33.1vmax;
     border: 3px solid #f1f1f1;
-    background-color: black;
-    max-width: 50vmax;
-    height: 23vmax;
+    background-image: url(fondoformulario.jpg);
+    background-size: cover;
+    height: 22vmax;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: black;
+    font-weight: bold;
     font-size:large;
     
 }
@@ -110,7 +138,7 @@ display: flex;
 
 
 button {
-    background-color:rgb(255, 217, 0);
+    background-color:rgb(255, 102, 0);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -154,6 +182,10 @@ button:hover{
   
     margin: 3vmax 0vmax 3vmax 0vmax;
 
+}
+input{
+    color: rgb(255, 102, 0);
+    font-weight: bold;
 }
 
 
@@ -206,3 +238,67 @@ button:hover{
     color: black;
     font-weight: bold;
 }
+.imgs{
+    width: 6vmax;
+    height: auto;
+    border-radius: 50%;
+    border: 10px solid rgb(255, 102, 0) ;
+    margin-top: 1vmax;
+   
+}
+
+.cards{
+    margin: 3vmax;
+    background-image: url(Fondocitas.jpg);
+    background-size: cover;
+    width: 25vmax;
+    height: 40vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+    font-weight: 500;
+    line-height: 0.5vmax;
+    border-radius: 1.5vmax;
+    box-shadow: 5px 4px 6px rgb(80, 79, 79);
+    
+    
+}
+.boton-editar{
+
+    color: white;
+    border-radius: 0.2vmax;
+    
+}
+.boton-editar:hover{
+
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 102, 0)  ;
+    
+}
+
+.sintomas{
+    width: 20vmax;
+    height: auto;
+    line-height: 1.5vmax;
+    text-align: center;
+   color: black;
+   text-overflow:ellipsis;
+   overflow: scroll;
+
+  
+
+}
+
+
+#contenedor_citas{
+    width: 100vmax;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-content:center;
+    text-align: center;
+    
+}
+

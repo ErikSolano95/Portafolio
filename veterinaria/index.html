@@ -11,20 +11,22 @@
     <div class="contenedor">
       <img src="fondo mascotas1.jpg" class="img-principal" />
 
-      <h1 class="title">Veterinaria</h1>
+  <h1 class="title">Veterinaria</h1>
+
+    
 
       <div class="encabezado">
         <div class="cont-izquierdo">
           <h2 class="title2">Estado</h2>
           <div class="botones">
             <label>
-              <input type="radio" name="Abiertas" value="Abiertas" />Abiertas
+              <input type="radio" name="estado"  id="abierta" value="Abiertas" onclick="pintar('citas')" />Abiertas
             </label>
             <label>
-              <input type="radio" name="Anulada" value="Anulada" />Anulada
+              <input type="radio" name="estado"  id="anulada" value="Anulada" onclick="pintar('cerradas')" />Anulada
             </label>
             <label>
-              <input type="radio" name="Terminada" value="Terminada" />Terminada
+              <input type="radio" name="estado"  id="cerrada" value="Terminada" onclick="pintar('anuladas')"/>Terminada
             </label>
           </div>
         </div>
@@ -35,13 +37,13 @@
 
         <div class="formulario" id="myForm">
           <form id="cita-form" class="formu">
-            <h2 style="color: rgb(255, 217, 0);">Agendar Cita</h2>
+            <h2 style="color: rgb(255, 102, 0);">Agendar Cita</h2>
             <div class="top">
               
               <div class="form-izquierdo">
                 <div class="nombre">
-                  <label for="nombre" >Nombre de la mascota:</label>
-                  <input type="text" id="nombre"  />
+                  <label for="nombre" ><img src="mascotas.png" width="40vmax" ></label>
+                  <input type="text" id="nombre" placeholder="Ingrese nombre Mascota"  />
                 </div>
                 <div class="tipo">
                   <label for="tipoMascota">Tipo de mascota:</label>
@@ -51,25 +53,25 @@
                     <option value="gato">Gato</option>
                     <option value="ave">Ave</option>
                     <option value="conejo">Conejo</option>
-                    <option value="reptil">Reptil</option>
-                    <option value="roedor">Roedor</option>
+                    <option value="ardilla">Ardilla</option>
+                    <option value="hamster ">Hamster </option>
                   </select>
                 </div>
               </div>
               <div class="for-derecho">
                 <div class="propietario">
                   <label for="propietario" 
-                  >Propietario:</label>
-                  <input type="text" id="propietario"/>
+                  ><img src="avatar.png"  width="40vmax" >:</label>
+                  <input type="text" id="propietario" placeholder="Ingrese nombre Propietario"/>
                 </div>
 
                 <div class="fecha">
-                  <label for="fecha">Fecha:</label>
+                  <label for="fecha"> <img src="fecha-tope.png"  width="40vmax" > </label>
                   <input type="date" id="fecha"  />
                 </div>
 
                 <div class="telefono">
-                  <label for="telefono" >Teléfono:</label>
+                  <label for="telefono" > <img src="llamada-telefonica.png"  width="40vmax" > </label>
                   <input
                     type="tel"
                     id="telefono"
@@ -79,14 +81,14 @@
                 </div>
 
                 <div class="hora">
-                  <label for="hora">Hora:</label>
+                  <label for="hora"><img src="reloj.png"  width="40vmax" ></label>
                   <input type="time" id="hora"  />
                 </div>
               </div>
             </div>
 
             <div class="form-pie">
-              <label for="sintomas">Síntomas:</label>
+              <label for="sintomas"> Sintomas <img src="enfermedades.png"  width="40vmax" ></label>
               <textarea id="sintomas" style="width: 40vmax ; height: 5vmax;;"></textarea>
             </div>
 <div class="boton-form">
@@ -103,15 +105,7 @@
             
         </div> -->
 
-        <div class="contenedor">
-        
-          <div id="contenedor_citas">
-
-            <h2>Lista de Citas</h2>
-          </div>
-
-
-</div>
+    
 
         <!-- alerta -->
         <div class="alert-container" id="alert">
@@ -126,6 +120,15 @@
        
         </div>
       </div>
+      <div class="contenedor">
+        
+        <div id="contenedor_citas">
+
+          <h2>Lista de Citas</h2>
+        </div>
+
+
+</div>
     </div>
   </body>
 </html>
