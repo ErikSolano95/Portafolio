@@ -47,21 +47,57 @@ function closeAlert() {
   document.getElementById("alert").style.display = "none";
 }
 
-function crear_cita() {
-  let cita = {
-    nombre: document.getElementById("nombre").value,
-    tipo: document.getElementById("tipo").value,
-    propietario: document.getElementById("propietario").value,
-    fecha: document.getElementById("fecha").value,
-    telefono: document.getElementById("telefono").value,
-    hora: document.getElementById("hora").value,
-    sintomas: document.getElementById("sintomas").value,
-  };
+let op = false; 
+let indice = -1;
 
-  citas.push(cita);
-  console.log(citas);
-  resetForm();
+function crear_cita() {
+
+let nombre = document.getElementById("nombre").value;
+let propietario = document.getElementById("propietario").value;
+let fecha = document.getElementById("fecha").value;
+let tipo = document.getElementById("tipo").value;
+let sintomas = document.getElementById("sintomas").value;
+let telefono = document.getElementById("telefono").value;
+let hora = document.getElementById("hora").value;
+
+if (op === true) {
+    citas[indice].nombre = document.getElementById("nombre").value;
+    citas[indice].propietario = document.getElementById("propietario").value;
+    citas[indice].fecha = document.getElementById("fecha").value;
+    citas[indice].tipo = document.getElementById("tipo").value;
+    citas[indice].sintomas = document.getElementById("sintomas").value;
+    citas[indice].telefono = document.getElementById("telefono").value;
+    citas[indice].hora = document.getElementById("hora").value;
+  } else {
+    let usuario = {
+      nombre: nombre,
+      propietario: propietario,
+      fecha: fecha,
+      tipo: tipo,
+      sintomas: sintomas,
+      telefono: telefono,
+      hora: hora
+    };
+    
+    citas.push(usuario);
+    
+    
+    document.getElementById("nombre").value = "";
+    document.getElementById("propietario").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("tipo").value = "";
+    document.getElementById("sintomas").value = "";
+    document.getElementById("telefono").value = "";
+    document.getElementById("hora").value = "";
+    
+    console.log(citas);
+  }
 }
+
+
+
+
+
 
 function pintar(filtro) {
   document.getElementById("contenedor_citas").innerHTML = ""; // Clear previous content
@@ -238,19 +274,23 @@ function validar() {
     crear_cita();
     closeForm();
     document.getElementById("contenedor_citas").innerHTML = "";
-    pintar("citas");
+    pintar("citas"); 
+
+    op = false;
   }
 }
+
+
 
 function edita(r, i) {
   op = true;
   indice = i;
-  console.log(r);
   document.getElementById("nombre").value = r.nombre;
   document.getElementById("tipo").value = r.tipo;
-  document.getElementById("propietario").value = r.tipo_documento;
-  document.getElementById("fecha").value = r.numero_documento;
+  document.getElementById("propietario").value = r.propietario;
+  document.getElementById("fecha").value = r.fecha;
   document.getElementById("telefono").value = r.telefono;
   document.getElementById("hora").value = r.hora;
   document.getElementById("sintomas").value = r.sintomas;
+  openForm();
 }
